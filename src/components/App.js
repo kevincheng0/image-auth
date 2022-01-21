@@ -74,6 +74,24 @@ class App extends Component {
     })
   }
 
+  // async insert() {
+  //   let db_connect = dbo.getDb();
+  //   let doc = { "name": "Pear", "taste": "sweet" };
+  //   db_connect
+  //       .collection("fruits")
+  //       .insertOne(doc, function (err) {
+  //         if (err) throw err;
+  //       });
+  // }
+
+  // async get() {
+  //   let db_connect = dbo.getDb();
+  //   let docs = await db_connect.collection("records").find({}, function (err) {
+  //     if (err) throw err;
+  //   });
+  //   console.log(docs);
+  // }
+
   purchaseProduct(id, price) {
     console.log("buying product", id, price);
     this.setState({ loading: true });

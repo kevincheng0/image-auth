@@ -18,10 +18,11 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
-    "mongodb": "^4.3.0",
+    "mongodb": "^4.3.1",
     "react": "16.8.4",
     "react-bootstrap": "1.0.0-beta.5",
     "react-dom": "16.8.4",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "2.1.3",
     "truffle": "5.0.5",
     "web3": "^1.0.0-beta.55"
