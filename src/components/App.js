@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import Web3 from 'web3';
-import logo from '../logo.png';
+
+import { Route, Routes } from "react-router-dom";
+
 import './App.css';
 import Marketplace from '../abis/Marketplace.json';
 import Navbar from './Navbar';
-import Main from './Main';
-import Loader from './Loader';
+// import Main from './Main';
+// import Loader from './Loader';
+import ImageList from "./ImageList";
+import Edit from "./edit";
+import Create from "./create";
 
 // Replace metamask later https://ethereum.stackexchange.com/questions/25839/how-to-make-transactions-using-private-key-in-web3
 class App extends Component {
@@ -74,24 +79,6 @@ class App extends Component {
     })
   }
 
-  // async insert() {
-  //   let db_connect = dbo.getDb();
-  //   let doc = { "name": "Pear", "taste": "sweet" };
-  //   db_connect
-  //       .collection("fruits")
-  //       .insertOne(doc, function (err) {
-  //         if (err) throw err;
-  //       });
-  // }
-
-  // async get() {
-  //   let db_connect = dbo.getDb();
-  //   let docs = await db_connect.collection("records").find({}, function (err) {
-  //     if (err) throw err;
-  //   });
-  //   console.log(docs);
-  // }
-
   purchaseProduct(id, price) {
     console.log("buying product", id, price);
     this.setState({ loading: true });
@@ -105,7 +92,12 @@ class App extends Component {
     return (
       <div>
         <Navbar account={ this.state.account }/>
-        <div className="container-fluid mt-5">
+        <Routes>
+          <Route exact path="/" element={<ImageList />} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/create" element={<Create />} />
+        </Routes>
+        {/* <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
@@ -119,7 +111,7 @@ class App extends Component {
               </div>
             </main>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

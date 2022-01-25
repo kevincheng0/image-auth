@@ -30,7 +30,9 @@ class Navbar extends Component {
                 </NavLink>
               </li>
               <li>
-                <p>{ this.props.account }</p>
+                <NavLink className="nav-link" to="/create">
+                  Account: {this.props.account}
+                </NavLink>
               </li>
             </ul>
           </div>
